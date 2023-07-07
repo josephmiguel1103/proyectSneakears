@@ -38,8 +38,8 @@ public class ProductoDAO implements ProductoDaoI {
     public int create(ProductoTO d) {
         int rsId = 0;
         String[] returns = {"nombre"};
-        String sql = "INSERT INTO producto(nombre,pu,utilidad,stock,id_categoria,id_marca) "
-                + "VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO producto(nombre,pu,stock,id_categoria,id_marca) "
+                + "VALUES(?,?,?,?,?)";
         int i = 0;
         System.out.println("Create categoria" + d.getIdCategoria());
         System.out.println("Create marca" + d.getIdMarca());
@@ -48,7 +48,6 @@ public class ProductoDAO implements ProductoDaoI {
             ps = connection.prepareStatement(sql, returns);
             ps.setString(++i, d.getNombre());
             ps.setDouble(++i, d.getPu());
-            ps.setDouble(++i, d.getUtilidad());
             ps.setDouble(++i, d.getStock());
             ps.setInt(++i, d.getIdCategoria());
             ps.setInt(++i, d.getIdMarca());
@@ -73,7 +72,6 @@ public class ProductoDAO implements ProductoDaoI {
         String sql = "UPDATE producto SET "
                 + "nombre=? "
                 + "pu=?, "
-                + "utilidad=?, "
                 + "stock=?, "
                 + "id_categoria=?, "
                 + "id_marca=? "
@@ -83,7 +81,6 @@ public class ProductoDAO implements ProductoDaoI {
             ps = connection.prepareStatement(sql);
             ps.setString(++i, d.getNombre());
             ps.setDouble(++i, d.getPu());
-            ps.setDouble(++i, d.getUtilidad());
             ps.setDouble(++i, d.getStock());
             ps.setInt(++i, d.getIdCategoria());
             ps.setInt(++i, d.getIdMarca());
@@ -131,7 +128,6 @@ public class ProductoDAO implements ProductoDaoI {
                 uTO.setIdProducto(rs.getInt("id_producto"));
                 uTO.setNombre(rs.getString("nombre"));
                 uTO.setPu(rs.getDouble("pu"));
-                uTO.setUtilidad(rs.getDouble("utilidad"));
                 uTO.setStock(rs.getDouble("stock"));
                 uTO.setIdCategoria(rs.getInt("id_categoria"));
                 uTO.setIdMarca(rs.getInt("id_marca"));
@@ -157,7 +153,6 @@ public class ProductoDAO implements ProductoDaoI {
                 uTO.setIdProducto(rs.getInt("id_producto"));
                 uTO.setNombre(rs.getString("nombre"));
                 uTO.setPu(rs.getDouble("pu"));
-                uTO.setUtilidad(rs.getDouble("utilidad"));
                 uTO.setStock(rs.getDouble("stock"));
                 uTO.setIdCategoria(rs.getInt("id_categoria"));
                 uTO.setIdMarca(rs.getInt("id_marca"));

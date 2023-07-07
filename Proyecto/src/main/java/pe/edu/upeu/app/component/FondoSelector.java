@@ -17,7 +17,7 @@ public class FondoSelector extends JPanel {
 
     @Override
     public void paint(Graphics g) {
-        imageX = new ImageIcon(obj.getFile("fondoselectorA.png")).getImage();
+        imageX = new ImageIcon(obj.getFile("fondoselector.png")).getImage();
         g.drawImage(imageX, 0, 0, getWidth(), getHeight(), this);
         setOpaque(false);
         g.setColor(getBackground());

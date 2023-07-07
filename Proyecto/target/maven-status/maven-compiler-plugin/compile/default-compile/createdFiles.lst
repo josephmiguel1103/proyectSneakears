@@ -53,6 +53,7 @@ pe\edu\upeu\app\gui\MainVentas$6.class
 pe\edu\upeu\app\gui\MainMarca$3.class
 pe\edu\upeu\app\dao\CategoriaDAO.class
 pe\edu\upeu\app\gui\MainCliente$3.class
+pe\edu\upeu\app\gui\Login$4.class
 pe\edu\upeu\app\gui\MainCategoria$5.class
 pe\edu\upeu\app\encript\MessageStream.class
 pe\edu\upeu\app\dao\CategoriaDaoI.class
